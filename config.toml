@@ -1,0 +1,6 @@
+baseURL = 'https://we-jia.github.io/'
+languageCode = 'zh-tw'
+title = 'My New Hugo Site'
+publishDir = "docs"
+
+theme = 'hugo-paper'
