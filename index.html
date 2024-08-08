@@ -7,12 +7,16 @@
 </head>
 <body>
     <h1>Hello, World!</h1>
+    <button class="g-recaptcha" 
+        data-sitekey="6LdlNiIqAAAAADYSN6SP6TZSywVGnyX6LwpInalQ" 
+        data-callback='onSubmit' 
+        data-action='submit'>Submit
+    </button>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <script>
-        // 在此處添加你的 JavaScript 代碼
-        console.log("這是一個嵌入的腳本");
-        document.addEventListener('DOMContentLoaded', (event) => {
-            console.log("DOM 完全加載並解析");
-        });
+        function onSubmit(token) {
+            document.getElementById("demo-form").submit();
+        }
     </script>
 </body>
 </html>
