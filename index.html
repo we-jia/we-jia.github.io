@@ -1,34 +1,22 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>reCAPTCHA 表單提交示例</title>
-    <script src="https://www.google.com/recaptcha/api.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js?render=6LdlNiIqAAAAADYSN6SP6TZSywVGnyX6LwpInalQ"></script>
-    <script>
-        function onClick(e) {
-            e.preventDefault();
-            grecaptcha.ready(function() {
-                grecaptcha.execute('6LdlNiIqAAAAADYSN6SP6TZSywVGnyX6LwpInalQ', {action: 'submit'}).then(function(token) {
-                    // 在這裡添加提交到你的後端伺服器的邏輯
-                    document.getElementById("demo-form").submit();
-                });
-            });
-        }
+<html>
+  <head>
+    <title>reCAPTCHA demo: Explicit render after an onload callback</title>
+    <script type="text/javascript">
+      var onloadCallback = function() {
+        grecaptcha.render('html_element', {
+          'sitekey' : 'your_site_key'
+        });
+      };
     </script>
-</head>
-<body>
-    <h1>reCAPTCHA 表單提交示例</h1>
-    
-    <form id="demo-form" action="/submit" method="post">
-        <label for="name">姓名：</label>
-        <input type="text" id="name" name="name" required>
-        <br>
-        <label for="email">電子郵件：</label>
-        <input type="email" id="email" name="email" required>
-        <br>
-        <button type="submit" onclick="onClick(event)">提交</button>
+  </head>
+  <body>
+    <form action="?" method="POST">
+      <div id="html_element"></div>
+      <br>
+      <input type="submit" value="Submit">
     </form>
-</body>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>
+  </body>
 </html>
