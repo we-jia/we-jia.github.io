@@ -12,12 +12,18 @@
     }
 </script>
 <body>
-    <h1>Hello, World!</h1>
-    <button class="g-recaptcha" 
-        data-sitekey="6LdlNiIqAAAAADYSN6SP6TZSywVGnyX6LwpInalQ" 
-        data-callback='onSubmit' 
-        data-action='submit'>Submit
-    </button>
-    <h1>Hello, World!</h1>
+    <form id="demo-form" action="/submit" method="post">
+        <label for="name">姓名：</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="email">電子郵件：</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <button class="g-recaptcha" 
+            data-sitekey="6LdlNiIqAAAAADYSN6SP6TZSywVGnyX6LwpInalQ" 
+            data-callback='onSubmit' 
+            data-action='submit'>Submit
+        </button>
+    </form>
 </body>
 </html>
