@@ -2,8 +2,9 @@
   <head>
     <title>reCAPTCHA demo: Explicit render after an onload callback</title>
     <script type="text/javascript">
+      var a;
       var onloadCallback = function() {
-        var a = grecaptcha.render('html_element', {
+        a = grecaptcha.render('html_element', {
           'sitekey' : '6LcvQiIqAAAAAHqL8z92dzxtKcNCcUY8-yvcD8Hm'
         });
         console.log(a);
