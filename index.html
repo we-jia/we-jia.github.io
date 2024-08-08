@@ -1,17 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>空白頁面</title>
+    <title>reCAPTCHA 表單提交示例</title>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdlNiIqAAAAADYSN6SP6TZSywVGnyX6LwpInalQ"></script>
+    <script>
+        function onClick(e) {
+            e.preventDefault();
+            grecaptcha.ready(function() {
+                grecaptcha.execute('6LdlNiIqAAAAADYSN6SP6TZSywVGnyX6LwpInalQ', {action: 'submit'}).then(function(token) {
+                    // 在這裡添加提交到你的後端伺服器的邏輯
+                    document.getElementById("demo-form").submit();
+                });
+            });
+        }
+    </script>
 </head>
-<script src="https://www.google.com/recaptcha/api.js"></script>
-<script>
-    function onSubmit(token) {
-        document.getElementById("demo-form").submit();
-    }
-</script>
 <body>
+    <h1>reCAPTCHA 表單提交示例</h1>
+    
     <form id="demo-form" action="/submit" method="post">
         <label for="name">姓名：</label>
         <input type="text" id="name" name="name" required>
@@ -19,11 +28,7 @@
         <label for="email">電子郵件：</label>
         <input type="email" id="email" name="email" required>
         <br>
-        <button class="g-recaptcha" 
-            data-sitekey="6LdlNiIqAAAAADYSN6SP6TZSywVGnyX6LwpInalQ" 
-            data-callback='onSubmit' 
-            data-action='submit'>Submit
-        </button>
+        <button type="submit" onclick="onClick(event)">提交</button>
     </form>
 </body>
 </html>
