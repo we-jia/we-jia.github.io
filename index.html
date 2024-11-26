@@ -1,9 +1,56 @@
-<!doctype html>
-<html>
-    <head>
-        <title>Hello world ! </title>
-    </head>
-    <body>
-           網頁內容
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>範例網站 - Open Graph Protocol Demo</title>
+
+    <!-- Open Graph Protocol Metadata -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="範例網站">
+    <meta property="og:description" content="這是一個展示 Open Graph Protocol 的範例網站，適用於 URL 預覽功能。">
+    <meta property="og:url" content="https://example.com">
+    <meta property="og:image" content="https://example.com/example-image.jpg">
+    <meta property="og:site_name" content="範例網站">
+    <meta property="og:locale" content="zh_TW">
+    
+    <!-- Twitter Card Metadata (可選，用於更好的兼容性) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="範例網站">
+    <meta name="twitter:description" content="這是一個展示 Open Graph Protocol 的範例網站，適用於 URL 預覽功能。">
+    <meta name="twitter:image" content="https://example.com/example-image.jpg">
+    <meta name="twitter:site" content="@example">
+
+    <!-- 網頁 CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>範例網站</h1>
+        <p>歡迎來到範例網站！這是一個用於展示 Open Graph Protocol 的 HTML 範例。</p>
+        <img src="https://example.com/example-image.jpg" alt="範例圖片">
+        <p>當你分享這個網站的連結時，預覽內容將包括標題、描述和一張縮圖。</p>
+    </div>
+</body>
 </html>
